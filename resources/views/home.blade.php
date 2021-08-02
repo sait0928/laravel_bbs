@@ -2,16 +2,17 @@
 @section('content')
 
     <div class="container" style="padding: 30px">
-        <form action="">
+        <form action="/insert_post" method="POST">
+            @csrf
             <div class="form-group">
-                <label for="exampleInputName">Name</label>
-                <input type="text" class="form-control">
+                <label for="exampleInputName">User Name</label>
+                <input type="text" name="user_name" class="form-control" title="Type your name" />
             </div>
             <div class="form-group">
                 <label for="exampleInputContent">Content</label>
-                <textarea class="form-control"></textarea>
+                <textarea name="content" class="form-control" title="Type content"></textarea>
             </div>
-            <input type="submit" class="btn btn-primary">
+            <input type="submit" class="btn btn-primary" />
         </form>
     </div>
 
@@ -22,8 +23,8 @@
                 <th>content</th>
             </tr>
             <tr>
-                <td>yuya</td>
-                <td>hello,world!</td>
+                <td>{{ $name }}</td>
+                <td>{{ $content }}</td>
             </tr>
         </table>
     </div>

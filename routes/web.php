@@ -18,3 +18,5 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
+
+Route::post('/insert_post', 'App\Http\Controllers\PostController@insertPost');
