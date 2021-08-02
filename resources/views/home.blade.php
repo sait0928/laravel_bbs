@@ -22,10 +22,12 @@
                 <th style="width: 20%">name</th>
                 <th>content</th>
             </tr>
-            <tr>
-                <td>{{ $name }}</td>
-                <td>{{ $content }}</td>
-            </tr>
+            @foreach($posts as $post)
+                <tr>
+                    <td>{{ $post->user_name }}</td>
+                    <td>{{ $post->content }}</td>
+                </tr>
+            @endforeach
         </table>
     </div>
 
