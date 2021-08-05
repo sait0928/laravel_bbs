@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $posts = DB::table('posts')->get();
+        $posts = Post::all();
 
         return view('home', [
             'posts' => $posts,
