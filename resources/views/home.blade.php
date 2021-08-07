@@ -18,8 +18,8 @@
 
     <div class="container" style="padding: 50px">
         <table class="table table-bordered">
-            <tr>
-                <td>User Name</td>
+            <tr class="table-primary">
+                <td style="width: 30%;">User Name</td>
                 <td>Content</td>
             </tr>
             @foreach($posts as $post)
@@ -28,7 +28,19 @@
                     <td>{{ $post->content }}</td>
                 </tr>
                 <tr class="collapse" id="collapse{{ $post->id }}">
-                    <td colspan="2">id: {{ $post->id }}, created at: {{ $post->created_at }}</td>
+                    <td colspan="2">
+                        <div style="border: 1px solid #cbd5e0; padding: 10px; margin-bottom: 10px;" class="table-info">Content detail</div>
+                        <table style="width: 100%;">
+                            <tr class="table-secondary">
+                                <th>ID</th>
+                                <th>Created at</th>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%;">{{ $post->id }}</td>
+                                <td>{{ $post->created_at }}</td>
+                            </tr>
+                        </table>
+                    </td>
                 </tr>
             @endforeach
         </table>
